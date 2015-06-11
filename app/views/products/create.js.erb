@@ -1,0 +1,7 @@
+<% if @product.new_record? %>
+  alert('Failed');
+<% else %>
+  if ($('h1') !== undefined) {
+    $('h1').append("<%=j render partial: 'products/product', locals: { product: @product } %>");
+  }
+<% end %>

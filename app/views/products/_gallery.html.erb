@@ -1,0 +1,8 @@
+<% @product.galleries.each do |gallery| %>
+
+  <div class="col-lg-9">
+    <%= image_tag gallery.photo.url(:small), class: "thumb" %><br/>
+    <%= link_to "Delete Gallery", product_path(@product, gallery: 'true', gal_id: gallery.id), method: :delete %>
+  </div>
+  <br/>
+<% end %>

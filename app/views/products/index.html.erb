@@ -1,0 +1,25 @@
+<h1>Listing products</h1>
+
+<p id="notice"><%= notice %></p>
+
+<% @products.each do |product| %>
+  <div class="row" id="recipe_top">
+    <div class="col-md-12">
+      <h2><%= link_to product.name, product %></h2>
+      <p>
+        <% product.galleries.each do |gallery| %>
+          <% if gallery.photo.exists? %>
+            <%= image_tag gallery.photo.url(:small) %><br/>
+          <% end %>
+        <% end %>
+      </p>
+      <p><%= "#{time_ago_in_words(product.created_at)} ago" %></p>
+      <p><%= product.price %></p>
+      <p><%= product.description %></p>
+      <br>
+      <%= link_to 'Show', product, class: "btn btn-default"  %>
+      <%= link_to 'Edit', edit_product_path(product), class: "btn btn-default"  %>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  %>
+    </div>
+  </div>
+<% end %>
