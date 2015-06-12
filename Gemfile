@@ -13,6 +13,9 @@ gem 'therubyracer', platforms: :ruby
 gem 'simple_form'
 gem 'nested_form'
 
+gem 'compass-rails', '~> 2.0.4'
+gem 'compass'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
