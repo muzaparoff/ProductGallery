@@ -22,10 +22,10 @@
   <div class="field">
     <%= f.label :price %><br>
     <%= f.number_field :price %>
-  </div>
-  <%= file_field_tag "photos[]", type: :file, multiple: true, name: 'product[image]' %>
+  </div><br>
+  <div id="dropzone" class="fade">Drop files here</div><br>
+  <%= file_field_tag "photos[]", type: :file, multiple: true, name: 'photo<div class="entry-thumbnail" data-picture="" data-alt=""><img src="" alt=""></div>' %>
     <div class="actions"><br>
-  <%= f.submit %>
   </div>
   <div class="progress-wrapper">
     <p>Bitrate: <span class="bitrate"></span></p>
@@ -35,6 +35,7 @@
       </div>
     </div>
   </div>
+  <%= f.submit %>
 <% end %>
 
 <script>
